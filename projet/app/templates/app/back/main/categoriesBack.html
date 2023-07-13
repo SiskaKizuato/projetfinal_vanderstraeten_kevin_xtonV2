@@ -51,12 +51,12 @@
                                             <p class="catNameList">{{x.name}}</p>
                                         </div>
                                         <div class="rightPartCatList">
-                                            <div class="editBtnCategory">
+                                            <div class="editBtnCategory curPoint">
                                                 <P class="txtBtnCat">EDIT</P>
                                             </div>
-                                            <div class="deleteBtnCategory">
+                                            <a class="deleteBtnCategory curPoint" href="/delete/{{x.id}}">
                                                 <p class="txtBtnCat">DELETE</p>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 {% endfor %}

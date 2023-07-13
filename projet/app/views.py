@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
 from .forms import SignupForm, ContactInfoForm, CategoryForm
@@ -150,3 +150,7 @@ def categoriesBack(request):
         form = CategoryForm()
     return render(request, 'app/back/main/categoriesBack.html', {"form": form, "allCategory": allCategory})
 
+def delete_category(request, id):
+    category = get_object_or_404(Category, id=id)
+    category.delete()
+    return redirect('categoriesBack')

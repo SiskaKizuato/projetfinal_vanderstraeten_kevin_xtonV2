@@ -40,10 +40,10 @@ class Article(models.Model):
         return self.name
 
     def clean(self):
-        men_count = self.category.filter(name='men').count()
-        women_count = self.category.filter(name='women').count()
-        clothing_count = self.category.filter(name='clothing').count()
-        shoes_count = self.category.filter(name='shoes').count()
+        men_count = self.category.filter(name="Men's").count()
+        women_count = self.category.filter(name="Women's").count()
+        clothing_count = self.category.filter(name='Clothing').count()
+        shoes_count = self.category.filter(name='Shoes').count()
 
         if men_count > 0 and women_count > 0:
             raise ValidationError("An article cannot be both 'Men' and 'Women'.")

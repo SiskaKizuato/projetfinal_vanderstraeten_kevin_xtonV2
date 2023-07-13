@@ -63,16 +63,16 @@ def seed_categories():
     seeder = Seed.seeder()
 
     # Seed for men category
-    seeder.add_entity(Category, 1, {'name': 'men'})
+    seeder.add_entity(Category, 1, {'name': "Men's"})
 
     # Seed for women category
-    seeder.add_entity(Category, 1, {'name': 'women'})
+    seeder.add_entity(Category, 1, {'name': "Women's"})
 
     # Seed for clothing category
-    seeder.add_entity(Category, 1, {'name': 'clothing'})
+    seeder.add_entity(Category, 1, {'name': 'Clothing'})
 
     # Seed for shoes category
-    seeder.add_entity(Category, 1, {'name': 'shoes'})
+    seeder.add_entity(Category, 1, {'name': 'Shoes'})
 
     seeder.execute()
     print("Categories seeded.")
