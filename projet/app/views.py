@@ -20,9 +20,9 @@ def checkout(request):
     return render(request, 'app/front/main/checkout.html')
 
 def contact(request):
-    contact_info = ContactInfo.objects.first()
-    context = {'contact_info': contact_info}
-    return render(request, 'app/front/main/contact.html', context)
+    # contact_info = ContactInfo.objects.first()
+    # context = {'contact_info': contact_info}
+    return render(request, 'app/front/main/contact.html')
 
 def error404(request):
     return render(request, 'app/front/main/error-404.html')
@@ -109,9 +109,9 @@ def blog5Back(request):
 
 # XXXXX CONTACT BACK XXXXX
 def contactBack(request):
-    contact_info = ContactInfo.objects.first()
-    context = {'contact_info': contact_info}
-    return render(request, 'app/back/main/contactBack.html', context)
+    # contact_info = ContactInfo.objects.first()
+    # context = {'contact_info': contact_info}
+    return render(request, 'app/back/main/contactBack.html')
 
 def update_contact_info(request):
     contact_info = ContactInfo.objects.first()

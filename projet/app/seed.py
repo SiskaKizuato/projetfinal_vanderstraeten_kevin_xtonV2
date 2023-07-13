@@ -51,7 +51,6 @@ def seed_contact_info():
     phone = "+01 321 654 214"
     email = "hello@xton.com"
     fax = "+123456789"
-    
     contact_info, _ = ContactInfo.objects.get_or_create(
         defaults={'location': location, 'phone': phone, 'email': email, 'fax': fax}
     )
