@@ -72,9 +72,9 @@ body {
 .leftPartCatList{
   height: 100%;
   width: 50%;
-  border: 1px solid black;
   padding: 0;
   margin: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -82,11 +82,42 @@ body {
 .rightPartCatList{
   height: 100%;
   width: 50%;
-  border: 1px solid black;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catNameList{
+  font-size: 19px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.842);
+}
+
+.editBtnCategory{
+  width: 49%;
+  height: 85%;
+  background-color: #f53f85;
+  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.deleteBtnCategory{
+  width: 49%;
+  height: 85%;
+  background-color: #f53f85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2px;
+}
+
+.txtBtnCat{
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold; 
 }
 
 .jourBackContainerRight{
