@@ -60,9 +60,68 @@ body {
   font-family: "Lato";
   font-size: 15px;
 }
+
+.usersLeft{
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usersMid{
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usersRight{
+  height: 100%;
+  width: 20%;
+  border: 2px solid #ffffff;
+}
+.txtList{
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.655);
+}
+.containerUsersList{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  padding: 3px;
+  background-color: #f5f5f5;
+  margin-bottom: 15px;
+}
+
+.ligneUsers{
+  height: 40px;
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .curPoint{
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  background-color: #f53f85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .curPoint p{
@@ -116,23 +175,15 @@ body {
 .editBtnCategory{
   width: 49%;
   height: 85%;
-  background-color: #f53f85;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .deleteBtnCategory{
   width: 49%;
   height: 85%;
-  background-color: #f53f85;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-right: 2px;
 }
 
-.txtBtnCat{
+.txtBtn{
   color: #ffffff;
   font-size: 14px;
   font-weight: bold; 

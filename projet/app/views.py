@@ -5,7 +5,9 @@ from .forms import SignupForm, ContactInfoForm, CategoryForm
 from .models import Profile, ContactInfo, Category
 from django.contrib.auth.models import User
 
+# xxxxxxxxxxxxxxxxx
 # XXXXX FRONT XXXXX
+# xxxxxxxxxxxxxxxxx
 
 def index(request):
     return render(request, 'app/front/main/index.html')
@@ -96,14 +98,22 @@ def singleBlog1(request):
 def trackOrder(request):
     return render(request, 'app/front/main/track-order.html')
 
+# xxxxxxxxxxxxxxxx
 # XXXXX BACK XXXXX
+# xxxxxxxxxxxxxxxx
 
 def indexBack(request):
     return render(request, 'app/back/main/indexBack.html')
 
-def allUsersBack(request):
-    return render(request, 'app/back/main/allUsersBack.html')
 
+# XXXXX ALL USERS XXXXX
+def allUsersBack(request):
+    allUsers = Profile.objects.all()
+
+    return render(request, 'app/back/main/allUsersBack.html', {"allUsers": allUsers})
+
+
+# XXXXX ALL BLOGS XXXXX
 def blog5Back(request):
     return render(request, 'app/back/main/blog5Back.html')
 
