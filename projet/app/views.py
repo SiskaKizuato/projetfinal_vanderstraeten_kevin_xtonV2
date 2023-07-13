@@ -154,3 +154,16 @@ def delete_category(request, id):
     category = get_object_or_404(Category, id=id)
     category.delete()
     return redirect('categoriesBack')
+
+def update_category(request, id):
+    category = Category.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, instance=category)
+        if form.is_valid():
+            form.save()
+            return redirect('categoriesBack')
+    else:
+        form = CategoryForm(instance=category)
+
+    return render(request, 'app/back/main/update_category.html', {'form': form, 'category': category})
