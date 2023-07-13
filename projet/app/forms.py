@@ -24,3 +24,4 @@ class ContactInfoForm(forms.ModelForm):
     class Meta:
         model = ContactInfo
         fields = ['location', 'phone', 'email', 'fax']
+        

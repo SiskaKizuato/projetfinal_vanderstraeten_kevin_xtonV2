@@ -1,5 +1,3 @@
-from django.db import models
-
 # Create your models here.
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
@@ -26,15 +24,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
 class Article(models.Model):
-    CATEGORY_CHOICES = [
-        ('men', 'Men'),
-        ('women', 'Women'),
-        ('shoes', 'Shoes'),
-        ('clothing', 'Clothing'),
-    ]
-
     name = models.CharField(max_length=100)
     category = models.ManyToManyField(Category)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -50,11 +40,18 @@ class Article(models.Model):
         return self.name
 
     def clean(self):
-        if self.category.filter(name='men').exists() and self.category.filter(name='women').exists():
+        men_count = self.category.filter(name='men').count()
+        women_count = self.category.filter(name='women').count()
+        clothing_count = self.category.filter(name='clothing').count()
+        shoes_count = self.category.filter(name='shoes').count()
+
+        if men_count > 0 and women_count > 0:
             raise ValidationError("An article cannot be both 'Men' and 'Women'.")
         
-        if self.category.filter(name='shoes').exists() and self.category.filter(name='clothing').exists():
-            raise ValidationError("An article cannot be both 'Shoes' and 'Clothing'.")
+        if clothing_count > 0 and shoes_count > 0:
+            raise ValidationError("An article cannot be both 'Clothing' and 'Shoes'.")
+
+
 
 
 

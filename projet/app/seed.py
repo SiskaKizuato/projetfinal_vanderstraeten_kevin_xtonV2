@@ -1,7 +1,6 @@
 from django_seed import Seed
 from django.contrib.auth.hashers import make_password
-from .models import Profile, ContactInfo
-
+from .models import Profile, ContactInfo, Category
 
 def run():
     seeder = Seed.seeder()
@@ -59,4 +58,26 @@ def seed_contact_info():
 
 # Appelez cette fonction dans votre méthode seed_database()
 seed_contact_info()
+
+def seed_categories():
+    seeder = Seed.seeder()
+
+    # Seed for men category
+    seeder.add_entity(Category, 1, {'name': 'men'})
+
+    # Seed for women category
+    seeder.add_entity(Category, 1, {'name': 'women'})
+
+    # Seed for clothing category
+    seeder.add_entity(Category, 1, {'name': 'clothing'})
+
+    # Seed for shoes category
+    seeder.add_entity(Category, 1, {'name': 'shoes'})
+
+    seeder.execute()
+    print("Categories seeded.")
+
+# Call this function to seed the categories
+seed_categories()
+
 

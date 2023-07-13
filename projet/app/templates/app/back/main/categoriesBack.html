@@ -23,14 +23,12 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="login-content">
                             <h2>Create a Categories</h2>
-
-                            <form class="login-form" method="POST">
+                            <form class="login-form" action="" method="post">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Category's name" name="categoryAdd">
+                                    {{form}}
                                 </div>
-
-                                <button type="submit" class="default-btn">Create</button>
+                                <button class="default-btn" type="submit">SAVE</button>
                             </form>
                         </div>
                     </div>
@@ -40,36 +38,36 @@
         <!-- End Create Category Area -->
 
         <!-- Start Categories List Area -->
-        <section class="login-area ptb-100">
+        <section class="mb-100">
             <div class="container">
                 <div id="fuflex" class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="login-content">
                             <h2>Categories List</h2>
+                            <div class="containerCategoryList">
+                                {% for x in allCategory %}
+                                    <div class="categoryCadre">
+                                        <div class="leftPartCatList">
+                                            <p>{{x.name}}</p>
+                                        </div>
+                                        <div class="rightPartCatList">
+                                            <div class="updateBtnCategory">
 
-                            <form class="login-form" method="POST">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Username" name="username">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="email" name="email">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="New password" name="password">
-                                </div>
-
-                                <button type="submit" class="default-btn">Change Password</button>
-                            </form>
+                                            </div>
+                                            <div class="deleteBtnCategory">
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
-        <!-- End Caetgories List Area -->
+        <!-- End Caetgories List Area --> 
 
         <!-- Start Facility Area -->
         <section class="facility-area pb-70">

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
-from .forms import SignupForm, ContactInfoForm
-from .models import Profile, ContactInfo
+from .forms import SignupForm, ContactInfoForm, CategoryForm
+from .models import Profile, ContactInfo, Category
 from django.contrib.auth.models import User
 
 # XXXXX FRONT XXXXX
@@ -136,6 +136,17 @@ def profileBack(request):
 def productLeftSideBar2Back(request):
     return render(request, 'app/back/main/productLeftSideBar2Back.html')
 
+
+
+# XXXX categories XXXXX
 def categoriesBack(request):
-    return render(request, 'app/back/main/categoriesBack.html')
+    allCategory = Category.objects.all()
+    if request.method == "POST":
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("categoriesBack")
+    else : 
+        form = CategoryForm()
+    return render(request, 'app/back/main/categoriesBack.html', {"form": form, "allCategory": allCategory})
 
