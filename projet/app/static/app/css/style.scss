@@ -73,6 +73,12 @@ body {
         size: $font-size;
     };
 }
+
+p::selection {
+    background-color: #f53f85;
+    color: #ffffff; /* Couleur du texte */
+}
+
 .usersLeft{
     border: 2px solid #ffffff;
     border-radius: 5px;

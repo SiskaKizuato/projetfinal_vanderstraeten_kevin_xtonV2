@@ -1,16 +1,20 @@
+import random
 from django_seed import Seed
 from django.contrib.auth.hashers import make_password
 from .models import Profile, ContactInfo, Category
 
 def run():
     seeder = Seed.seeder()
+    phone_numbers = ['+1234567890', '+9876543210', '+32435879564', '+33475802930']  # Liste de numéros de téléphone
+
     seeder.add_entity(Profile, 1, {
         'username': 'admin1',
         'password': make_password('1234'),
         'email': 'admin1@example.com',
         'first_name': 'Admin',
         'last_name': 'Role',
-        'role': Profile.Role.ADMIN
+        'role': Profile.Role.ADMIN,
+        'phone': random.choice(phone_numbers)  # Numéro de téléphone aléatoire
     })
 
     seeder.add_entity(Profile, 1, {
@@ -19,7 +23,8 @@ def run():
         'email': 'web1@example.com',
         'first_name': 'Web',
         'last_name': 'Role',
-        'role': Profile.Role.WEB
+        'role': Profile.Role.WEB,
+        'phone': random.choice(phone_numbers)  # Numéro de téléphone aléatoire
     })
 
     seeder.add_entity(Profile, 1, {
@@ -28,7 +33,8 @@ def run():
         'email': 'stock1@example.com',
         'first_name': 'Stock',
         'last_name': 'Role',
-        'role': Profile.Role.STOCK
+        'role': Profile.Role.STOCK,
+        'phone': random.choice(phone_numbers)  # Numéro de téléphone aléatoire
     })
 
     seeder.add_entity(Profile, 1, {
@@ -37,7 +43,8 @@ def run():
         'email': 'membre1@example.com',
         'first_name': 'Membre',
         'last_name': 'Role',
-        'role': Profile.Role.MEMBRE
+        'role': Profile.Role.MEMBRE,
+        'phone': random.choice(phone_numbers)  # Numéro de téléphone aléatoire
     })
 
     inserted_pks = seeder.execute()

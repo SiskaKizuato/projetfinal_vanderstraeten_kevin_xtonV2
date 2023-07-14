@@ -52,10 +52,13 @@
                                                     <p class="txtList">{{x.email}}</p>
                                                 </div>
                                                 <div class="usersMid">
-                                                    <p class="txtList"></p>
+                                                    <p class="txtList">{{x.phone}}</p>
                                                 </div>
                                                 <div class="usersRight curPoint">
-                                                    <p class="txtBtn">DELETE</p>
+                                                    <form method="POST" action="{% url 'delete_user' x.id %}">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="txtBtn">DELETE</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

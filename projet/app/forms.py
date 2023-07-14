@@ -4,10 +4,11 @@ from .models import Profile, Article, Category, ContactInfo
 class SignupForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password', 'phone']  # Ajout du champ phone
         widgets = {
             'password': forms.PasswordInput(),
         }
+
 
 class ArticleForm(forms.ModelForm):
     class Meta:

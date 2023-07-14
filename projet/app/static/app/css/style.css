@@ -61,6 +61,11 @@ body {
   font-size: 15px;
 }
 
+::selection {
+  background-color: #f53f85;
+  color: #ffffff; /* Couleur du texte */
+}
+
 .usersLeft{
   border: 2px solid #ffffff;
   border-radius: 5px;
@@ -128,6 +133,14 @@ body {
   color: #ffffff;
   transition: 0.3s ease-in-out;
 }
+.curPoint button{
+  height: 100%;
+  width: 100%;
+  background-color: #f53f85;
+  border: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
 
 .curPoint:hover {
   border: 1px solid black;
@@ -136,6 +149,11 @@ body {
 
 .curPoint:hover p{
   color : black;
+}
+
+.curPoint:hover button{
+  color: black;
+  background-color: #ffffff;
 }
 
 .categoryCadre{

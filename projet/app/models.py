@@ -11,12 +11,14 @@ class Profile(AbstractUser):
         MEMBRE = 'membre'
     
     role = models.CharField(choices=Role.choices, max_length=20, default=Role.MEMBRE)
+    phone = models.CharField(max_length=20, null=True, blank=True)
     
     groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
     user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
 
     def __str__(self):
         return self.username
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100)

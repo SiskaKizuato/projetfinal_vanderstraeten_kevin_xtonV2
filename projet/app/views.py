@@ -4,6 +4,7 @@ from django.contrib.auth.hashers import make_password
 from .forms import SignupForm, ContactInfoForm, CategoryForm
 from .models import Profile, ContactInfo, Category
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 # xxxxxxxxxxxxxxxxx
 # XXXXX FRONT XXXXX
@@ -111,6 +112,27 @@ def allUsersBack(request):
     allUsers = Profile.objects.all()
 
     return render(request, 'app/back/main/allUsersBack.html', {"allUsers": allUsers})
+
+def delete_user(request, id):
+    user = get_object_or_404(Profile, id=id)
+    
+    if request.method == 'POST':
+        # Vérifier si l'utilisateur est administrateur
+        if user.role == Profile.Role.ADMIN:
+            # Vérifier si l'utilisateur courant est également administrateur
+            if request.user == user:
+                user.delete()
+                messages.success(request, "Your account has been deleted successfully.")
+                return redirect('index')
+            else:
+                messages.error(request, "Admin users cannot delete other admin users.")
+        else:
+            user.delete()
+            messages.success(request, "User deleted successfully.")
+        
+        return redirect('allUsersBack')
+
+    return redirect('allUsersBack')
 
 
 # XXXXX ALL BLOGS XXXXX

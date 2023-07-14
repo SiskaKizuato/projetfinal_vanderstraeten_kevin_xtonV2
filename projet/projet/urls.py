@@ -25,7 +25,10 @@ urlpatterns = [
     path('ordersBack/', views.ordersBack, name="ordersBack"),
     path('productLeftSideBar2Back/', views.productLeftSideBar2Back, name="productLeftSideBar2Back"),
     path('profileBack/', views.profileBack, name="profileBack"),
+    
     path('update_contact_info/', views.update_contact_info, name='update_contact_info'),
-    path('delete/<int:id>', views.delete_category, name='delete_category'),
-    path('update_category/<int:id>/', views.update_category, name='update_category')
+    path('update_category/<int:id>/', views.update_category, name='update_category'),
+    
+    path('delete_category/<int:id>', views.delete_category, name='delete_category'),
+    path('delete_user/<int:id>/', views.delete_user, name='delete_user'),
 ]
