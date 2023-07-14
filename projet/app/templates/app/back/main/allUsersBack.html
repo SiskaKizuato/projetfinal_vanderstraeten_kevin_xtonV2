@@ -33,20 +33,29 @@
                                                     <p class="txtList">{{x.last_name}}</p>
                                                 </div>
                                                 <div class="usersRight curPoint">
-                                                    <p class="txtBtn">UPDATE</p>
-                                                </div>
-                                            </div>
-                                            <div class="ligneUsers">
-                                                <div class="usersLeft"> 
-                                                    <p class="txtList">{{x.username}}</p>
-                                                </div>
-                                                <div class="usersMid">
-                                                    <p class="txtList">{{x.role}}</p>
-                                                </div>
-                                                <div class="usersRight curPoint">
                                                     <p class="txtBtn">SHOW</p>
                                                 </div>
                                             </div>
+                                            <form method="POST" action="{% url 'update_user' x.id %}" class="ligneUsers">
+                                                {% csrf_token %}
+                                                <div class="usersLeft"> 
+                                                    <p class="txtList">{{x.username}}</p>
+                                                </div>
+                                                
+                                                <select name="role" class="usersMid role-select" data-user-id="{{ x.id }}">
+                                                    <option value="{{ x.role }}" selected>{{ x.role }}</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="web">Web</option>
+                                                    <option value="stock">Stock</option>
+                                                    <option value="membre">Membre</option>
+                                                </select>
+                                                <div class="usersRight curPoint">
+                                                    <button type="submit" class="txtBtn">UPDATE</button>
+                                                </div>
+                                                {% comment %} <div class="containerSelect">
+
+                                                </div> {% endcomment %}
+                                            </form>
                                             <div class="ligneUsers">
                                                 <div class="usersLeft"> 
                                                     <p class="txtList">{{x.email}}</p>

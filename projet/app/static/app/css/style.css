@@ -80,7 +80,6 @@ body {
 .usersMid{
   height: 100%;
   width: 40%;
-  overflow: hidden;
   border-radius: 5px;
   border: 2px solid #ffffff;
   display: flex;
@@ -92,6 +91,12 @@ body {
   height: 100%;
   width: 20%;
   border: 2px solid #ffffff;
+}
+option {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-weight: bold;
+  /* Ajoutez d'autres styles selon vos préférences */
 }
 .txtList{
   font-size: 17px;

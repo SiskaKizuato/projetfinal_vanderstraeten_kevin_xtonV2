@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
 from .forms import SignupForm, ContactInfoForm, CategoryForm
 from .models import Profile, ContactInfo, Category
-from django.contrib.auth.models import User
 from django.contrib import messages
 
 # xxxxxxxxxxxxxxxxx
@@ -133,6 +132,15 @@ def delete_user(request, id):
         return redirect('allUsersBack')
 
     return redirect('allUsersBack')
+
+def update_user(request, user_id):
+    if request.method == 'POST':
+        user = Profile.objects.get(id=user_id)
+        role = request.POST.get('role')
+        user.role = role
+        user.save()
+    return redirect('allUsersBack')
+
 
 
 # XXXXX ALL BLOGS XXXXX

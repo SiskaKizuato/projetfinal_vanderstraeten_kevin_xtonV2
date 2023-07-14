@@ -3,6 +3,7 @@ from app import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    # XXXXX FRONT XXXXX
     path('', views.index, name="index"),
     path('indexBack', views.indexBack, name="indexBack"),
     path('blog-5/', views.blog5, name="blog5"),
@@ -18,6 +19,8 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('single-blog-1/', views.singleBlog1, name="singleBlog1"),
     path('track-order/', views.trackOrder, name="trackOrder"),
+    
+    # XXXXX BACK XXXXX
     path('allUsersBack/', views.allUsersBack, name="allUsersBack"),
     path('blog5Back/', views.blog5Back, name="blog5Back"),
     path('categoriesBack/', views.categoriesBack, name="categoriesBack"),
@@ -26,9 +29,12 @@ urlpatterns = [
     path('productLeftSideBar2Back/', views.productLeftSideBar2Back, name="productLeftSideBar2Back"),
     path('profileBack/', views.profileBack, name="profileBack"),
     
+    # XXXXX UPDATE XXXXX
     path('update_contact_info/', views.update_contact_info, name='update_contact_info'),
     path('update_category/<int:id>/', views.update_category, name='update_category'),
-    
+    path('update_user/<int:user_id>/', views.update_user, name='update_user'),
+
+    # XXXXX DELETE XXXXX
     path('delete_category/<int:id>', views.delete_category, name='delete_category'),
     path('delete_user/<int:id>/', views.delete_user, name='delete_user'),
 ]
