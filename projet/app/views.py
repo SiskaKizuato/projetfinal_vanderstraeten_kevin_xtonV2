@@ -176,9 +176,27 @@ def profileBack(request):
 def productLeftSideBar2Back(request):
     return render(request, 'app/back/main/productLeftSideBar2Back.html')
 
+# XXXXX USER DETAILS ET PROFILE XXXXX
 def userDetailsBack(request, user_id):
     user = get_object_or_404(Profile, id=user_id)
     return render(request, 'app/back/main/userDetailsBack.html', {'user': user})
+
+def profileBack(request):
+    return render(request, 'app/back/main/profileBack.html')
+
+def update_profile(request):
+    if request.method == 'POST':
+        user = request.user
+        user.first_name = request.POST['first_name']
+        user.last_name = request.POST['last_name']
+        user.email = request.POST['email']
+        user.phone = request.POST['phone']
+        user.username = request.POST['username']  # Ajoutez cette ligne pour mettre à jour le nom d'utilisateur
+        user.save()
+        # Autres opérations de mise à jour si nécessaire
+        return redirect('profileBack')
+    return redirect('indexBack')
+
 
 # XXXX categories XXXXX
 def categoriesBack(request):

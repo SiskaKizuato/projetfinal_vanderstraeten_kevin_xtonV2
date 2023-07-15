@@ -133,11 +133,40 @@ option {
   align-items: center;
   justify-content: center;
 }
-
+.curPoint2{
+  cursor: pointer;
+  background-color: #f53f85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .curPoint p{
   color: #ffffff;
   transition: 0.3s ease-in-out;
 }
+.curPoint2 p{
+  color: #ffffff;
+}
+
+#styleInputProfile{
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  background-color: #f5f5f5;
+  border: none;
+  transition: 0.2s;
+}
+#styleInputProfile:hover{
+  border: 1px solid black;
+}
+
 .curPoint button{
   height: 100%;
   width: 100%;

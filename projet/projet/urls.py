@@ -33,6 +33,7 @@ urlpatterns = [
     path('update_contact_info/', views.update_contact_info, name='update_contact_info'),
     path('update_category/<int:id>/', views.update_category, name='update_category'),
     path('update_user/<int:user_id>/', views.update_user, name='update_user'),
+    path('update_profile/', views.update_profile, name='update_profile'),
 
     # XXXXX DELETE XXXXX
     path('delete_category/<int:id>', views.delete_category, name='delete_category'),
