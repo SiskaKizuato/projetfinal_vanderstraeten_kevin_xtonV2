@@ -12,11 +12,11 @@
 
                     <div class="col-lg-6 col-md-12">
                         <ul class="header-top-menu">
-                            {% if user.is_active %}
+                            {% if user.is_authenticated %}
                                 {% if user.role == 'admin' %}
-                                <li><a href="{% url 'allUsersBack' %}"><i class='bx bxs-user'></i>{{ user.username }}</a></li>
+                                <li><a href="{% url 'allUsersBack' %}"><i class='bx bxs-user'></i>{{ request.user.username }}</a></li>
                                 {% else %}
-                                <li><a href="{% url 'profileBack' %}"><i class='bx bxs-user'></i>{{ user.username }}</a></li>
+                                <li><a href="{% url 'profileBack' %}"><i class='bx bxs-user'></i>{{ request.user.username }}</a></li>
                                 {% endif %}
                             {% else %}
                                 <li><a href="{% url 'login' %}"><i class='bx bxs-user'></i>My Account</a></li>
