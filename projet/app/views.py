@@ -176,7 +176,9 @@ def profileBack(request):
 def productLeftSideBar2Back(request):
     return render(request, 'app/back/main/productLeftSideBar2Back.html')
 
-
+def userDetailsBack(request, user_id):
+    user = get_object_or_404(Profile, id=user_id)
+    return render(request, 'app/back/main/userDetailsBack.html', {'user': user})
 
 # XXXX categories XXXXX
 def categoriesBack(request):

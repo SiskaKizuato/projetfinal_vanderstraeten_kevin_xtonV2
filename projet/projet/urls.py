@@ -37,4 +37,8 @@ urlpatterns = [
     # XXXXX DELETE XXXXX
     path('delete_category/<int:id>', views.delete_category, name='delete_category'),
     path('delete_user/<int:id>/', views.delete_user, name='delete_user'),
+    
+    # XXXXX SHOW XXXXX
+    path('userDetailsBack/<int:user_id>/', views.userDetailsBack, name='userDetailsBack'),
+
 ]

@@ -189,6 +189,26 @@ option {
   justify-content: space-between;
 }
 
+.leftPartUserDetails{
+  height: 100%;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightPartUserDetails{
+  height: 100%;
+  width: 75%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .catNameList{
   font-size: 19px;
   font-weight: bold;
@@ -198,6 +218,11 @@ option {
 .editBtnCategory{
   width: 49%;
   height: 85%;
+}
+
+.titreUserDetail{
+  height: 85%;
+  width: 100%;
 }
 
 .deleteBtnCategory{
