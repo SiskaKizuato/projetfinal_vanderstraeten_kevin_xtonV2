@@ -74,12 +74,12 @@ body {
     };
 }
 
-p::selection {
+::selection {
     background-color: #f53f85;
     color: #ffffff; /* Couleur du texte */
-}
-
-.usersLeft{
+  }
+  
+  .usersLeft{
     border: 2px solid #ffffff;
     border-radius: 5px;
     height: 100%;
@@ -93,7 +93,6 @@ p::selection {
   .usersMid{
     height: 100%;
     width: 40%;
-    overflow: hidden;
     border-radius: 5px;
     border: 2px solid #ffffff;
     display: flex;
@@ -105,6 +104,12 @@ p::selection {
     height: 100%;
     width: 20%;
     border: 2px solid #ffffff;
+  }
+  option {
+    background-color: #f0f0f0;
+    font-size: 14px;
+    font-weight: bold;
+    /* Ajoutez d'autres styles selon vos préférences */
   }
   .txtList{
     font-size: 17px;
@@ -141,9 +146,46 @@ p::selection {
     align-items: center;
     justify-content: center;
   }
-  
+  .curPoint2{
+    cursor: pointer;
+    background-color: #f53f85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .curPoint p{
     color: #ffffff;
+    transition: 0.3s ease-in-out;
+  }
+  .curPoint2 p{
+    color: #ffffff;
+  }
+  
+  #styleInputProfile{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: #f5f5f5;
+    border: none;
+    transition: 0.2s;
+  }
+  #styleInputProfile:hover{
+    border: 1px solid black;
+  }
+  
+  .curPoint button{
+    height: 100%;
+    width: 100%;
+    background-color: #f53f85;
+    border: none;
+    outline: none;
     transition: 0.3s ease-in-out;
   }
   
@@ -154,6 +196,11 @@ p::selection {
   
   .curPoint:hover p{
     color : black;
+  }
+  
+  .curPoint:hover button{
+    color: black;
+    background-color: #ffffff;
   }
   
   .categoryCadre{
@@ -184,6 +231,26 @@ p::selection {
     justify-content: space-between;
   }
   
+  .leftPartUserDetails{
+    height: 100%;
+    width: 25%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rightPartUserDetails{
+    height: 100%;
+    width: 75%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
   .catNameList{
     font-size: 19px;
     font-weight: bold;
@@ -193,6 +260,11 @@ p::selection {
   .editBtnCategory{
     width: 49%;
     height: 85%;
+  }
+  
+  .titreUserDetail{
+    height: 85%;
+    width: 100%;
   }
   
   .deleteBtnCategory{
