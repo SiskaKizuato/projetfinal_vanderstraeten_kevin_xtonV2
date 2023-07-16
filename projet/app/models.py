@@ -68,3 +68,41 @@ class ContactInfo(models.Model):
     def __str__(self):
         return self.location
     
+    
+# XXXX BLOG XXXXX
+
+class Blog(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='blog_images/')
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    categoryBlog = models.ForeignKey('CategoryBlog', on_delete=models.CASCADE, default=None)
+    tags = models.ManyToManyField('Tag')
+
+    def __str__(self):
+        return self.title
+    
+class CategoryBlog(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+    
+class Tag(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Comment(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    content = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content
+    
+
+

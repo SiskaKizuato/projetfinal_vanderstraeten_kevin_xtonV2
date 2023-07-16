@@ -17,7 +17,10 @@ urlpatterns = [
     path('products-left-sidebar-2/', views.productLeftSideBar2, name="productLeftSideBar2"),
     path('products-type-1/', views.productsType1, name="productsType1"),
     path('signup/', views.signup, name="signup"),
+    
     path('single-blog-1/', views.singleBlog1, name="singleBlog1"),
+    path('create-blog/', views.create_blog, name='create_blog'),
+
     path('track-order/', views.trackOrder, name="trackOrder"),
     
     # XXXXX BACK XXXXX

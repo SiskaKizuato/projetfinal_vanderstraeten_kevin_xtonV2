@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import make_password
-from .forms import SignupForm, ContactInfoForm, CategoryForm
-from .models import Profile, ContactInfo, Category
+from .forms import SignupForm, ContactInfoForm, CategoryForm, BlogForm, CategoryBlogForm, TagForm
+from .models import Profile, ContactInfo, Category, CategoryBlog, Tag
 from django.contrib import messages
 
 # xxxxxxxxxxxxxxxxx
@@ -59,6 +59,8 @@ def productLeftSideBar2(request):
 def productsType1(request):
     return render(request, 'app/front/main/products-type-1.html')
 
+# XXXXX COMPTE FRONT XXXXX
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -92,8 +94,23 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
+# XXXXX BLOG FRONT XXXXX
+
 def singleBlog1(request):
     return render(request, 'app/front/main/single-blog-1.html')
+
+def create_blog(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            blog = form.save()
+            # Faire quelque chose avec l'objet blog créé, par exemple, rediriger vers la page de détails du blog
+            return redirect('blog_details', pk=blog.pk)
+    else:
+        form = BlogForm()
+    
+    return render(request, 'app/front/main/createBlog.html', {'form': form})
+
 
 def trackOrder(request):
     return render(request, 'app/front/main/track-order.html')
